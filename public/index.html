@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Trumps Tweeting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body class="home" ng-controller="myCtrl">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="text-center">Trumps Tweeting</h1>
+        </div>
+      </div>
+      <div class="row" ng-if="twitterErrors">
+        <div class="col-xs-12">
+          <div class="alert alert-danger">
+            {{twitterErrors}}
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:50px;" ng-if="results">
+        <div class="col-xs-12">
+          <p class="text-center"><img ng-src="{{results.profile_image_url}}"></p>
+          <p>{{results.status.created_at}}</p>
+          <p>{{results.status.text}}</p>
+          <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
