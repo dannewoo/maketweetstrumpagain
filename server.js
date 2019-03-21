@@ -4,6 +4,10 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
 var error = function (err, response, body) {
     console.log('ERROR [%s]', JSON.stringify(err));
 };
@@ -49,7 +53,9 @@ app.post('/twitter/user', function (req, res) {
 });
 
 
-var server = app.listen(5000, function () {
-  	var host = server.address().address;
-  	var port = server.address().port;
+app.listen(port, function () {
+    console.log('Our app is running on http://localhost:' + port);
+
+  	// var host = server.address().address;
+  	// var port = server.address().port;
 });

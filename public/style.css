@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+body {
+	font-family: 'Coming Soon', cursive;
+	color: white;
+}
+
+.hide {
+	display: none;
+}
+
+#video, .trump {
+	position: fixed; 
+	z-index: -100; 
+	width: 100%; 
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+.trump {
+	z-index: -50; 
+	background-image: url('images/trump.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.container {
+	width: 250px;
+	margin: 0px auto;
+	text-align: center;
+}
